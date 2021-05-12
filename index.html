@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CDN axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- CDN vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <!-- CDN bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue container -->
+    <div id="root" class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center"> selezione musicale </h2>
+            </div>        
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <select name="" id=""></select>
+                <option value=""></option>
+            </div>
+        </div>
+        <!-- area per stampare le card degli album: utilizzo v-for per ciclare su array di oggetti 
+        Se l'array è ancora vuoto e recupo dati attivo: informo user con v-if-->
+      
+        <div class="row scroll">
+           
+            <div v-if ="loading === false && albumsList.length > 0" class="card-box">
+
+                <div class="card" v-for="song in albumsList">
+                    <img class="card-img-top" :src="song.poster" alt="album cover">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{song.title}}</h5>
+                        <p class="card-text">{{song.author}}</p>
+                        <p class="card-text"><small class="text-muted">{{song.year}}</small></p>
+                    </div>
+                </div>
+            </div>
+            <div v-else> stiamo caricando la selezione musicare adatta a te...</div>
+
+        </div>
+
+
+
+    </div>
+    <!-- collegamento a mio script -->
+    <script src="scripts/script.js"></script>
+    
+</body>
+</html>

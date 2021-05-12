@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#root {
+    height: 100vh;
+}
+.card{
+    padding: 8px 10px;
+    border: none;
+    flex-basis: calc(100% / 4);
+}
+.card-box{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.scroll{
+    overflow-y: auto;
+}
+
+/* // Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... } */
